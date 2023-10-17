@@ -3,6 +3,8 @@ import Login from './pages/Login';
 import React from 'react';
 import Signup from './pages/Signup';
 import Main from './pages/Main';
+import Diary from './pages/Diary';
+import Todolist from './pages/Todolist';
 
 const App = () => {
   return (
@@ -11,6 +13,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Main />} />
+        <Route path="/diary" element={<Diary />} />
+        <Route path="/todolist" element={<Todolist />} />
       </Routes>
     </BrowserRouter>
   );

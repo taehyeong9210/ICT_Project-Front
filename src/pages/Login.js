@@ -32,7 +32,7 @@ const Content = styled.div`
 `;
 
 const InnerContent = styled.div`
-  width: 400px;
+  width: 700px;
   height: 450px;
 `;
 
