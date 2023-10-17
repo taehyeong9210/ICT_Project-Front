@@ -31,7 +31,10 @@ const Content = styled.div`
   background-color: white;
 `;
 
-const InnerContent = styled.div``;
+const InnerContent = styled.div`
+  width: 700px;
+  height: 450px;
+`;
 
 const Login = () => {
   return (
@@ -40,7 +43,22 @@ const Login = () => {
       <Container>
         <Head>APP 이름</Head>
         <Content>
-          <InnerContent className="innerContent">Inner Content</InnerContent>
+          <InnerContent className="innerContent">
+            <form>
+              <input
+                type="text"
+                // value={id}
+                placeholder="아이디를 입력하세요"
+              ></input>
+              <input
+                type="password"
+                // value={pw}
+                placeholder="비밀번호를 입력하세요"
+              ></input>
+              <button>확인</button>
+              <button>회원가입</button>
+            </form>
+          </InnerContent>
         </Content>
       </Container>
     </div>
