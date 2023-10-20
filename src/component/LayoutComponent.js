@@ -1,5 +1,6 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { useLocation, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 
 const Container = styled.div`
   margin: auto;
@@ -16,56 +17,107 @@ const Head = styled.div`
   font-size: 2.5rem;
   color: white;
   font-weight: 800;
+  position: relative;
 `;
 
 const Content = styled.div`
   height: 500px;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 `;
 
 const InnerContent = styled.div`
   width: 700px;
   height: 450px;
-`;
-
-const ButtonContainer = styled.div`
+  background-color: Ivory;
+  border-radius: 10px;
   display: flex;
-  justify-content: flex-end;
-  background-color: white;
+  justify-content: center;
+  align-items: center;
   position: relative;
 `;
 
-const LoginButton = styled.button`
+const ButtonContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+  background-color: white; /* 배경색을 원하는 색상으로 변경, 예: white */
+`;
+
+const LoginButton = styled.button`
+  position: relative;
+  top: 0;
+
+  color: white;
+  background-color: black;
 `;
 
 const RegisterButton = styled.button`
-  position: absolute;
+  position: relative;
   top: 0;
-  right: 50px; /* 버튼 사이의 간격 조절을 위해 오른쪽 위치 조정 */
+
+  color: white;
+  background-color: black;
+`;
+
+const Icon = styled(ArrowLeftOutlined)`
+  font-size: 24px; // 아이콘 크기 조절
+  color: white; // 아이콘 색상 조절
+  &:hover {
+    color: red; // 호버 효과
+  }
+`;
+
+const BackButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 5%; // 가운데 위치
+  top: 50%; // 가운데 위치
+  transform: translate(-50%, -50%) scale(1, 1); // 두 변환을 함께 적용
 `;
 
 const LayoutComponent = ({ component }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const handleClickLogin = () => {
-    navigate("/login");
+    navigate('/login');
   };
   return (
-    <Container>
-      <Head>APP 이름</Head>
-      {pathname === "/" && (
-        <ButtonContainer>
-          <LoginButton onClick={handleClickLogin}>로그인</LoginButton>
-          <RegisterButton>회원 가입</RegisterButton>
-        </ButtonContainer>
+    <>
+      {pathname === '/' && (
+        <Container>
+          <Head>APP 이름</Head>
+          <Content>
+            <ButtonContainer>
+              <LoginButton onClick={handleClickLogin}>로그인</LoginButton>
+              <RegisterButton>회원 가입</RegisterButton>
+            </ButtonContainer>
+            <InnerContent className="innerContent">{component}</InnerContent>
+          </Content>
+        </Container>
       )}
-      <Content>
-        <InnerContent className="innerContent">{component}</InnerContent>
-      </Content>
-    </Container>
+      {pathname !== '/' && (
+        <Container>
+          <Head>
+            <BackButton>
+              <Icon />
+            </BackButton>
+            App이름
+          </Head>
+          <Content>
+            <InnerContent className="innerContent">{component}</InnerContent>
+          </Content>
+        </Container>
+      )}
+    </>
   );
 };
 
