@@ -44,7 +44,7 @@ const ButtonContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  background-color: white; /* 배경색을 원하는 색상으로 변경, 예: white */
+  background-color: white;
 `;
 
 const LoginButton = styled.button`
@@ -64,10 +64,10 @@ const RegisterButton = styled.button`
 `;
 
 const Icon = styled(ArrowLeftOutlined)`
-  font-size: 24px; // 아이콘 크기 조절
-  color: white; // 아이콘 색상 조절
+  font-size: 24px;
+  color: white;
   &:hover {
-    color: red; // 호버 효과
+    color: red;
   }
 `;
 
@@ -79,9 +79,9 @@ const BackButton = styled.button`
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 5%; // 가운데 위치
-  top: 50%; // 가운데 위치
-  transform: translate(-50%, -50%) scale(1, 1); // 두 변환을 함께 적용
+  left: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1, 1);
 `;
 
 const LayoutComponent = ({ component }) => {
