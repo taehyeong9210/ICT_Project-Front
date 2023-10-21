@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { ArrowLeftOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 
 const Container = styled.div`
   margin: auto;
@@ -45,22 +46,7 @@ const ButtonContainer = styled.div`
   top: 0;
   right: 0;
   background-color: white;
-`;
-
-const LoginButton = styled.button`
-  position: relative;
-  top: 0;
-
-  color: white;
-  background-color: black;
-`;
-
-const RegisterButton = styled.button`
-  position: relative;
-  top: 0;
-
-  color: white;
-  background-color: black;
+  z-index: 1;
 `;
 
 const Icon = styled(ArrowLeftOutlined)`
@@ -90,6 +76,15 @@ const LayoutComponent = ({ component }) => {
   const handleClickLogin = () => {
     navigate('/login');
   };
+
+  const handleClickSignup = () => {
+    navigate('/signup');
+  };
+
+  const backClickButton = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       {pathname === '/' && (
@@ -97,8 +92,13 @@ const LayoutComponent = ({ component }) => {
           <Head>APP 이름</Head>
           <Content>
             <ButtonContainer>
-              <LoginButton onClick={handleClickLogin}>로그인</LoginButton>
-              <RegisterButton>회원 가입</RegisterButton>
+              <Button onClick={handleClickLogin}>로그인</Button>
+              <Button
+                style={{ margin: '0.3rem 0.5rem' }}
+                onClick={handleClickSignup}
+              >
+                회원 가입
+              </Button>
             </ButtonContainer>
             <InnerContent className="innerContent">{component}</InnerContent>
           </Content>
@@ -107,10 +107,10 @@ const LayoutComponent = ({ component }) => {
       {pathname !== '/' && (
         <Container>
           <Head>
-            <BackButton>
+            <BackButton onClick={backClickButton}>
               <Icon />
             </BackButton>
-            App이름
+            APP 이름
           </Head>
           <Content>
             <InnerContent className="innerContent">{component}</InnerContent>
