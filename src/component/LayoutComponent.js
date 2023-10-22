@@ -12,29 +12,19 @@ const Container = styled.div`
 
 const Head = styled.div`
   height: 60px;
-  background-color: #22b8cf;
+  background-color: white;
   text-align: center;
   line-height: 60px;
   font-size: 2.5rem;
-  color: white;
+  color: black;
   font-weight: 800;
   position: relative;
+  border-bottom: 1px dotted lightgrey;
 `;
 
 const Content = styled.div`
   height: 500px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
-
-const InnerContent = styled.div`
-  width: 700px;
-  height: 450px;
   background-color: Ivory;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +41,7 @@ const ButtonContainer = styled.div`
 
 const Icon = styled(ArrowLeftOutlined)`
   font-size: 24px;
-  color: white;
+  color: black;
   &:hover {
     color: red;
   }
@@ -100,7 +90,7 @@ const LayoutComponent = ({ component }) => {
                 회원 가입
               </Button>
             </ButtonContainer>
-            <InnerContent className="innerContent">{component}</InnerContent>
+            {component}
           </Content>
         </Container>
       )}
@@ -112,9 +102,7 @@ const LayoutComponent = ({ component }) => {
             </BackButton>
             APP 이름
           </Head>
-          <Content>
-            <InnerContent className="innerContent">{component}</InnerContent>
-          </Content>
+          <Content>{component}</Content>
         </Container>
       )}
     </>
