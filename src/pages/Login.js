@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #ffe4b5;
+  background-color: #dcdcdc;
   border-radius: 10px;
   height: 200px;
   width: 80%;
@@ -34,6 +34,7 @@ const CustomButton = styled(Button)`
 
 const Span = styled(Link)`
   text-decoration: none;
+
   font-size: 0.8rem;
   margin-top: 10px;
 `;

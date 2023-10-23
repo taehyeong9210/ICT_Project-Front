@@ -82,9 +82,14 @@ const LayoutComponent = ({ component }) => {
           <Head>APP 이름</Head>
           <Content>
             <ButtonContainer>
-              <Button onClick={handleClickLogin}>로그인</Button>
               <Button
-                style={{ margin: '0.3rem 0.5rem' }}
+                style={{ borderColor: 'black' }}
+                onClick={handleClickLogin}
+              >
+                로그인
+              </Button>
+              <Button
+                style={{ margin: '0.3rem 0.5rem', borderColor: 'black' }}
                 onClick={handleClickSignup}
               >
                 회원 가입
