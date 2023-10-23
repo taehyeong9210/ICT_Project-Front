@@ -35,7 +35,7 @@ const ButtonContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  background-color: white;
+  background-color: #f5f5f5;
   z-index: 1;
 `;
 
