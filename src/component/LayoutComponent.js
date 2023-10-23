@@ -5,18 +5,18 @@ import { Button } from 'antd';
 
 const Container = styled.div`
   margin: auto;
-  border: 1px solid black;
+  border: 2px solid black;
   width: 750px;
   margin-top: 50px;
 `;
 
 const Head = styled.div`
   height: 60px;
-  background-color: white;
+  background-color: #34568b;
   text-align: center;
   line-height: 60px;
   font-size: 2.5rem;
-  color: black;
+  color: #f0f8ff;
   font-weight: 800;
   position: relative;
   border-bottom: 1px dotted lightgrey;
@@ -24,7 +24,7 @@ const Head = styled.div`
 
 const Content = styled.div`
   height: 500px;
-  background-color: Ivory;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,7 @@ const ButtonContainer = styled.div`
 
 const Icon = styled(ArrowLeftOutlined)`
   font-size: 24px;
-  color: black;
+  color: white;
   &:hover {
     color: red;
   }

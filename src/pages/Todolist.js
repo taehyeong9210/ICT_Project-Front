@@ -19,16 +19,11 @@ const Container = styled.div`
   }
 `;
 
-const TodoBtnCustom = styled(TodoBtn)`
-  background-color: #6a5acd;
-  color: white;
-`;
-
 const TodolistComponent = () => {
   return (
     <Container>
       <DiaryBtn />
-      <TodoBtnCustom />
+      <TodoBtn />
     </Container>
   );
 };
