@@ -9,7 +9,10 @@ const InputTag = styled(Input)`
   margin-right: 5px;
   border-color: black;
 `;
-
+const Container = styled.div`
+  margin: 0 auto;
+  width: 100%;
+`;
 const InputContainer = styled.div`
   width: 100%;
   display: flex;
@@ -63,7 +66,7 @@ const Line = styled.div`
       case 2:
         return '#008B8B';
       case 3:
-        return '#1E90FF';
+        return '#808000';
       default:
     }
   }};
@@ -120,40 +123,42 @@ const SignupComponent = () => {
             {step === 3 ? `${step}단계: E-mail 입력` : ''}
           </StepText>
         </StepIndicator>
-        <InputContainer>
-          <span>ID</span>
-          <InputTag
-            name="id"
-            type="text"
-            placeholder="아이디를 입력해주세요."
-            onChange={onChangeInput}
-          />
-        </InputContainer>
-        <InputContainer>
-          <span>PW</span>
-          <InputTag
-            name="pw"
-            type="password"
-            placeholder="비밀번호를 입력해주세요."
-            onChange={onChangeInput}
-          />
-        </InputContainer>
-        <InputContainer>
-          <span>E-Mail</span>
-          <InputTag
-            name="email"
-            type="email"
-            placeholder="이메일을 입력해주세요."
-            onChange={onChangeInput}
-          />
-        </InputContainer>
+        <Container>
+          <InputContainer>
+            <span>ID</span>
+            <InputTag
+              name="id"
+              type="text"
+              placeholder="아이디를 입력해주세요."
+              onChange={onChangeInput}
+            />
+          </InputContainer>
+          <InputContainer>
+            <span>PW</span>
+            <InputTag
+              name="pw"
+              type="password"
+              placeholder="비밀번호를 입력해주세요."
+              onChange={onChangeInput}
+            />
+          </InputContainer>
+          <InputContainer>
+            <span>E-Mail</span>
+            <InputTag
+              name="email"
+              type="email"
+              placeholder="이메일을 입력해주세요."
+              onChange={onChangeInput}
+            />
+          </InputContainer>
 
-        <ButtonContainer>
-          <ButtonCustom>회원가입</ButtonCustom>
-          <ButtonCustom>
-            <Link to="/">취소</Link>
-          </ButtonCustom>
-        </ButtonContainer>
+          <ButtonContainer>
+            <ButtonCustom>회원가입</ButtonCustom>
+            <ButtonCustom>
+              <Link to="/">취소</Link>
+            </ButtonCustom>
+          </ButtonContainer>
+        </Container>
       </FormCustom>
     </>
   );

@@ -1,11 +1,10 @@
-import { createGlobalStyle } from "styled-components";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import React from "react";
-import Signup from "./pages/Signup";
-import Main from "./pages/Main";
-import Diary from "./pages/Diary";
-import Todolist from "./pages/Todolist";
+import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import Login from './pages/Login';
+import React from 'react';
+import Signup from './pages/Signup';
+import Main from './pages/Main';
+import Contents from './pages/Contents';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,8 +23,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Main />} />
-          <Route path="/diary" element={<Diary />} />
-          <Route path="/todolist" element={<Todolist />} />
+          <Route path="/contents" element={<Contents />} />
         </Routes>
       </BrowserRouter>
     </>

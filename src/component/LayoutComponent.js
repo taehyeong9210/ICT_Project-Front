@@ -26,7 +26,7 @@ const Content = styled.div`
   height: 500px;
   background-color: #f5f5f5;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
 `;
