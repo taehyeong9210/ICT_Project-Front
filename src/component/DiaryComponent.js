@@ -4,50 +4,60 @@ import { useState } from 'react';
 
 const HeadContainer = styled.div`
   width: 750px;
-
-  background-color: grey;
-
-  height: 150px;
+  height: 200px;
   display: flex;
+  position: relative;
 `;
 
 const Circle = styled.div`
   background-color: white;
-  width: 220px;
+  width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin-left: 20px;
-  margin-top: 20px;
   cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-image: url(${({ selectedImage }) => selectedImage});
+  background-size: cover;
 `;
 
 const HeadTextContainer = styled.div`
   width: 510px;
+  position: absolute;
+  top: 0;
+  left: 450px;
 `;
+
 const Datdiv = styled.div`
-  margin-left: 240px;
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-size: 1.75rem;
+  margin-top: 20px;
 `;
 
 const ImageGallery = styled.div`
   width: 250px;
-  displat: flex;
+  display: flex;
+  position: absolute;
+  top: 220px;
 `;
 
 const Image = styled.img`
+  margin-top: 10px;
   width: 50px;
   height: 50px;
+  cursor: pointer;
 `;
 
 const Modal = styled.div`
   display: ${({ open }) => (open ? 'block' : 'none')};
+  position: absolute;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
 `;
 
 const DiaryComponent = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [modalOpen, setModalOpen] = useState(true);
+  const [selectedImage, setSelectedImage] = useState('');
 
   const images = [
     '/images/smile.png',
@@ -66,17 +76,18 @@ const DiaryComponent = () => {
   };
 
   const handleImageClick = (image) => {
-    setSelectedImage(image);
+    if (modalOpen) {
+      setSelectedImage(image);
+    }
+  };
+
+  const handleModalClick = () => {
+    handleCloseModal();
   };
 
   return (
     <HeadContainer className="left-aligned">
-      <Circle onClick={handleOpenModal} />
-      <HeadTextContainer>
-        <Datdiv>2023년 10월 28일 토요일</Datdiv>
-      </HeadTextContainer>
-
-      <Modal open={modalOpen}>
+      <Modal open={modalOpen} onClick={handleModalClick}>
         <ImageGallery>
           {images.map((image, index) => (
             <Image
@@ -87,14 +98,15 @@ const DiaryComponent = () => {
             />
           ))}
         </ImageGallery>
-        {selectedImage && (
-          <Image
-            src={selectedImage}
-            alt="Selected"
-            onClick={handleCloseModal}
-          />
-        )}
       </Modal>
+
+      <Circle selectedImage={selectedImage} onClick={handleOpenModal} />
+      <HeadTextContainer>
+        <Datdiv style={{ fontFamily: 'single Day, sans-serif' }}>
+          2023년 10월 28일 토요일
+        </Datdiv>
+        <input placeholder="TITLE"></input>
+      </HeadTextContainer>
     </HeadContainer>
   );
 };

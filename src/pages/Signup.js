@@ -2,7 +2,7 @@ import LayoutComponent from '../component/LayoutComponent';
 import React, { useState, useEffect } from 'react';
 import { Button, Input, Form } from 'antd';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const InputTag = styled(Input)`
   width: 80%;
@@ -25,6 +25,7 @@ const FormCustom = styled(Form)`
   width: 80%;
   display: flex;
   flex-direction: column;
+  margin: auto;
 `;
 
 const ButtonContainer = styled.div`
@@ -82,6 +83,8 @@ const SignupComponent = () => {
 
   const [step, setStep] = useState(0);
 
+  const navigate = useNavigate();
+
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     setInputValues((prevInputValues) => ({
@@ -111,6 +114,10 @@ const SignupComponent = () => {
       setStep(3);
     }
   }, [inputValues]);
+
+  const onClickCancel = () => {
+    navigate(-1);
+  };
 
   return (
     <>
@@ -154,9 +161,7 @@ const SignupComponent = () => {
 
           <ButtonContainer>
             <ButtonCustom>회원가입</ButtonCustom>
-            <ButtonCustom>
-              <Link to="/">취소</Link>
-            </ButtonCustom>
+            <ButtonCustom onClick={onClickCancel}>취소</ButtonCustom>
           </ButtonContainer>
         </Container>
       </FormCustom>

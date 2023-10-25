@@ -27,7 +27,7 @@ const Content = styled.div`
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   position: relative;
 `;
 
