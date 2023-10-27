@@ -11,15 +11,38 @@ const HeadContainer = styled.div`
 
 const Circle = styled.div`
   background-color: white;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 50px;
   background-image: url(${({ selectedImage }) => selectedImage});
   background-size: cover;
+`;
+
+const TitleInput = styled.input`
+  display: block;
+  margin: auto auto;
+  height: 30px;
+  width: 200px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, #006400, #006400) no-repeat bottom;
+  background-size: 0% 2px;
+  transition: background-size 0.5s ease;
+  text-align: center;
+
+  &:focus {
+    background-size: 100% 2px;
+  }
+
+  &::placeholder {
+    color: grey;
+    text-align: center;
+  }
 `;
 
 const HeadTextContainer = styled.div`
@@ -32,13 +55,14 @@ const HeadTextContainer = styled.div`
 const Datdiv = styled.div`
   font-size: 1.75rem;
   margin-top: 20px;
+  margin-left: 80px;
 `;
 
 const ImageGallery = styled.div`
   width: 250px;
   display: flex;
   position: absolute;
-  top: 220px;
+  top: 170px;
 `;
 
 const Image = styled.img`
@@ -102,11 +126,17 @@ const DiaryComponent = () => {
 
       <Circle selectedImage={selectedImage} onClick={handleOpenModal} />
       <HeadTextContainer>
-        <Datdiv style={{ fontFamily: 'single Day, sans-serif' }}>
+        <Datdiv
+          style={{
+            fontFamily: 'Dongle, sans-serif',
+            fontSize: '30px',
+            fontWeight: 'bold',
+          }}
+        >
           2023년 10월 28일 토요일
         </Datdiv>
-        <input placeholder="TITLE"></input>
       </HeadTextContainer>
+      <TitleInput placeholder="TITLE"></TitleInput>
     </HeadContainer>
   );
 };

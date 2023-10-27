@@ -116,7 +116,7 @@ const SignupComponent = () => {
   }, [inputValues]);
 
   const onClickCancel = () => {
-    navigate(-1);
+    navigate('/');
   };
 
   return (

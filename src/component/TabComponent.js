@@ -20,6 +20,7 @@ const TabButton = styled.div.withConfig({ displayName: 'TabButton' })`
   color: ${(props) => (props.active ? 'white' : 'black')};
   background-color: ${(props) => (props.active ? '#4682b4' : '#ffdead')};
   transition: background-color 1s ease, color 0.3s ease;
+  cursor: pointer;
 
   &::before {
     content: '';
