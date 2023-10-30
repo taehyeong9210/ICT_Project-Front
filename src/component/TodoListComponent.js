@@ -29,6 +29,7 @@ const ButtonTag = styled.button`
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-weight: bold;
 
   &:hover {
     background-color: #356b9d;

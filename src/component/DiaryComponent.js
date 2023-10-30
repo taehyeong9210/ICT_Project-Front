@@ -9,6 +9,14 @@ const HeadContainer = styled.div`
   position: relative;
 `;
 
+const FileInput = styled.input`
+  width: 400px;
+  height: 200px;
+  margin-top: 20px;
+  left: 20px;
+  display: none;
+`;
+
 const Circle = styled.div`
   background-color: white;
   width: 150px;
@@ -24,7 +32,8 @@ const Circle = styled.div`
 
 const TitleInput = styled.input`
   display: block;
-  margin: auto auto;
+  margin: auto;
+  margin-top: 200px;
   height: 30px;
   width: 200px;
   font-size: 20px;
@@ -111,6 +120,7 @@ const DiaryComponent = () => {
 
   return (
     <HeadContainer className="left-aligned">
+      <FileInput type="file" />
       <Modal open={modalOpen} onClick={handleModalClick}>
         <ImageGallery>
           {images.map((image, index) => (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import DiaryComponent from './DiaryComponent';
+import DiaryComponentimg from './DiaryComponentimg';
 import TodoListComponent from './TodoListComponent';
 
 const Container = styled.div.withConfig({ displayName: 'Container' })`
@@ -72,7 +72,7 @@ const TabComponent = () => {
         </TabButton>
       </Container>
       <ContentContainer>
-        {activeTab === 'Diary' && <DiaryComponent />}
+        {activeTab === 'Diary' && <DiaryComponentimg />}
         {activeTab === 'Todo-List' && <TodoListComponent />}
       </ContentContainer>
     </>
