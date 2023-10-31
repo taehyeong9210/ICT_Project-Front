@@ -19,9 +19,12 @@ const FileInput = styled.input`
 
 const ImagePreview = styled.div`
   width: 330px;
+  background-color: #dcdcdc;
   height: 150px;
+  border-radius: 10px;
   margin-top: 20px;
   margin-left: 20px;
+  margin-right: 20px;
   background-image: url(${({ previewImage }) => previewImage});
   background-size: cover;
   background-position: center;
@@ -55,7 +58,7 @@ const HeadTextContainer = styled.div`
   width: 510px;
   position: absolute;
   top: 0;
-  left: 450px;
+  left: 400px;
 `;
 
 const BodyContainer = styled.div`
@@ -66,24 +69,23 @@ const BodyContainer = styled.div`
 `;
 
 const MainTextarea = styled.textarea`
+
   display: block;
   margin: auto;
-  margin-top: 50px;
-  height: 60px; /* 높이 조절 */
+  margin-top: 10px;
+  height: 150px; 
   width: 600px;
   font-size: 16px;
-  border: none;
+border: 1px solid #90EE90;
+border-radius: 5px;
   outline: none;
   background: linear-gradient(to right, #006400, #006400) no-repeat bottom;
   background-size: 0% 2px;
-  transition: background-size 0.5s ease;
-  text-align: center;
+ 
+
 overflow:hidden;
 
-  &:focus {
-    background-size: 100% 2px;
-  }
-
+ 
 
     &::placeholder {
       color: grey;
@@ -147,7 +149,7 @@ const DiaryComponentimg = () => {
       </HeadContainer>
       <BodyContainer>
         <TitleInput placeholder="TITLE"></TitleInput>
-        <MainTextarea placeholder="오늘은 어땠나요?" rows={1}></MainTextarea>
+        <MainTextarea maxLength={200} rows={1}></MainTextarea>
       </BodyContainer>
     </>
   );
