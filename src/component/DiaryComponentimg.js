@@ -19,7 +19,7 @@ const FileInput = styled.input`
 
 const ImagePreview = styled.div`
   width: 330px;
-  background-color: #dcdcdc;
+  background-color: CadetBlue;
   height: 150px;
   border-radius: 10px;
   margin-top: 20px;
@@ -64,7 +64,6 @@ const HeadTextContainer = styled.div`
 const BodyContainer = styled.div`
   width: 750px;
   height: 250px;
-
   position: absolute;
 `;
 
@@ -76,7 +75,7 @@ const MainTextarea = styled.textarea`
   height: 150px; 
   width: 600px;
   font-size: 16px;
-border: 1px solid #90EE90;
+border: 2px solid #000000;
 border-radius: 5px;
   outline: none;
   background: linear-gradient(to right, #006400, #006400) no-repeat bottom;

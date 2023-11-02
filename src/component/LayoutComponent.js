@@ -79,7 +79,7 @@ const LayoutComponent = ({ component }) => {
     <>
       {pathname === '/' && (
         <Container>
-          <Head>APP 이름</Head>
+          <Head>시작과 끝</Head>
           <Content>
             <ButtonContainer>
               <Button
